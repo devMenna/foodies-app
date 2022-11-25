@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { recipesGotten } from '../recipes-details/recipesSlice';
 
 
+
 const SearchForm = () => {
 
   const dispatch = useDispatch()
