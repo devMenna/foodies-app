@@ -1,20 +1,7 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-    {
-        id: nanoid(),
-        title: '',
-        ingredients: '',
-        thumbnail: '',
-        largeImage: '',
-        regImage: '',
-        mealType: '',
-        source: '',
-        url: '',
-        calories: 0,
-        dietType: [],
-        cautions: []
-    }
+ 
 ]
 
 const recipesSlice= createSlice({
@@ -22,13 +9,15 @@ const recipesSlice= createSlice({
     initialState,
     reducers: {
         recipesGotten(state, action){
-            state.push(action.payload)
-        }
+            state.push(...action.payload)
+        },
+        cleanup: () => initialState
     }
 })
 
 export const selectAllRecipes = (state) => state.recipes
 
-export const { recipesGotten } = recipesSlice.actions
+export const { recipesGotten, cleanup } = recipesSlice.actions
 
 export default recipesSlice.reducer
+

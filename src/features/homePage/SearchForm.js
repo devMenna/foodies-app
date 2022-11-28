@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, CircularProgress, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { recipesGotten } from '../recipes-details/recipesSlice';
+import { cleanup, recipesGotten } from '../recipes-details/recipesSlice';
+import { nanoid } from '@reduxjs/toolkit';
 
 
 
@@ -14,12 +15,15 @@ const SearchForm = () => {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
+
   const handleChange = (e) => {
     setInput(e.target.value)
+
   }
 
-  const apiTest = async(e) => {
+  const apiCall = async(e) => {
     e.preventDefault()
+    dispatch(cleanup())
     setIsLoading(true)
     const options = {
         method: 'GET',
@@ -39,6 +43,7 @@ const SearchForm = () => {
       const formattedData = data.data.hits.map(item => {
         const recipeData = item.recipe
         return {
+          id: nanoid(),
           title: recipeData.label,
           ingredients: recipeData.ingredientLines,
           thumbnail: recipeData.images.THUMBNAIL?.url,
@@ -55,11 +60,12 @@ const SearchForm = () => {
       dispatch(recipesGotten(formattedData))
      }
      setIsLoading(false)
+    
 }
 
   return (
     <div>
-        <form onSubmit={apiTest}>
+        <form onSubmit={apiCall}>
             <Box
             display= "flex"
             flexDirection="column"
