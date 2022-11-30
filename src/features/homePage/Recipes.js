@@ -1,5 +1,6 @@
 import {ImageList, ImageListItem, ImageListItemBar } from '@mui/material'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { selectAllRecipes } from '../recipes-details/recipesSlice';
 
 const Recipes = () => {
@@ -9,7 +10,8 @@ const Recipes = () => {
     return (
       <ImageList>
         {recipes.map((item) => (
-          <ImageListItem key={item.id}>
+          <Link to={`recipe/${item.id}`} key={item.id}>
+          <ImageListItem>
             <img
               src={item.regImage}
               srcSet={item.regImage}
@@ -21,7 +23,9 @@ const Recipes = () => {
               subtitle={<span>by: {item.source}</span>}
               position="below"
             />
+
           </ImageListItem>
+          </Link>
         ))}
       </ImageList>
     )

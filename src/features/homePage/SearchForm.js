@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, CircularProgress, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import axios from 'axios';
@@ -23,7 +23,9 @@ const SearchForm = () => {
 
   const apiCall = async(e) => {
     e.preventDefault()
+
     dispatch(cleanup())
+    
     setIsLoading(true)
     const options = {
         method: 'GET',

@@ -11,11 +11,15 @@ const recipesSlice= createSlice({
         recipesGotten(state, action){
             state.push(...action.payload)
         },
-        cleanup: () => initialState
+        cleanup: () => initialState,
+
+
     }
 })
 
 export const selectAllRecipes = (state) => state.recipes
+
+export const selectRecipeById = (state, id) => state.recipes.find((recipe) => recipe.id === id)
 
 export const { recipesGotten, cleanup } = recipesSlice.actions
 
