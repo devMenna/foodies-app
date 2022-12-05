@@ -18,3 +18,9 @@ a{
   border: 0.5px black solid;
   padding: 5px;
 }
+
+.recipe{
+  text-decoration: none;
+  color: whitesmoke;
+  border: none !important;
+}

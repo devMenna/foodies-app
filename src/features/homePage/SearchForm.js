@@ -49,7 +49,6 @@ const SearchForm = () => {
           title: recipeData.label,
           ingredients: recipeData.ingredientLines,
           thumbnail: recipeData.images.THUMBNAIL?.url,
-          largeImage: recipeData.images.LARGE?.url,
           regImage: recipeData.images.REGULAR?.url,
           mealType: recipeData.mealType,
           source: recipeData.source,
