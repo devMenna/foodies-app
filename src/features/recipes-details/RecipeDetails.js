@@ -32,7 +32,7 @@ const RecipeDetails = () => {
 
 
   return (
-    <Container  sx={{display: 'flex', alignItems: 'center', marginTop: 10 }}>
+    <Container  sx={{display: 'flex', alignItems: 'center', marginTop: 5, backgroundColor: 'wheat', padding: 5, mb: 4, borderRadius: 10 }}>
     <Box
     component="img"
     sx={{
@@ -45,11 +45,10 @@ const RecipeDetails = () => {
   />
 
   <Container>
-  <Box >
-    <Box sx={{marginBottom: 1}}>
-  <Chip label={'Source: ' + recipe.source} sx={{ color: 'white', background: 'blue', marginRight: 1, marginTop: 1}} />
-  <Chip label={'Calories: ' + Math.round(recipe.calories) + ' Kcal'} sx={{ color: 'white', background: 'green', marginRight: 1, marginTop: 1 }} />
-  <Chip label={'Diet Type: ' + recipe.dietType} sx={{ color: 'white', background: 'purple', marginRight: 1, marginTop: 1 }} />
+    <Box sx={{marginBottom: 2}}>
+  <Chip label={'Source: ' + recipe.source} sx={{ color: 'white', background: '#B5926D', marginRight: 1, marginTop: 1, fontWeight: 10}} />
+  <Chip label={'Calories: ' + Math.round(recipe.calories) + ' Kcal'} sx={{ color: 'white', background: '#B5926D', marginRight: 1, marginTop: 1 }} />
+  <Chip label={'Diet Type: ' + recipe.dietType} sx={{ color: 'white', background: '#B5926D', marginRight: 1, marginTop: 1 }} />
   <Chip label={'Cautions: ' + cautions } sx={{ color: 'white', background: 'red', marginRight: 1, marginTop: 1 }} />
   </Box>
 
@@ -62,13 +61,13 @@ const RecipeDetails = () => {
     {line} </Typography>
      ))}
 
-  <Button variant="contained" sx={{marginTop: 2}}>
-    <a href={recipe.url} className='recipe'>
+  <Button variant="contained" sx={{marginTop: 2, backgroundColor: '#B5926D'}} href={recipe.url} target= '_blank'>
       Check out the recipe
-    </a>
   </Button>
 
-  </Box>
+  <Button variant="contained" sx={{marginTop: 2, marginLeft: 2, backgroundColor: '#B5926D'}} onClick={() => navigate(-1)}>
+      Back
+  </Button>
   </Container>
   </Container>
   )

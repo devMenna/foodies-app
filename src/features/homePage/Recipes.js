@@ -8,7 +8,7 @@ const Recipes = () => {
 
   if(recipes){
     return (
-      <ImageList>
+      <ImageList cols={3}>
         {recipes.map((item) => (
           <Link to={`recipe/${item.id}`} key={item.id}>
           <ImageListItem>
