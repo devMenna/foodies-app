@@ -72,7 +72,7 @@ const SearchForm = () => {
             flexDirection="column"
             alignItems="center" >
             <TextField id="search-bar" label="Search your favorite food" variant="outlined" sx={{ mb: 1 }} value={input} onChange={handleChange} />
-            <Button variant="contained" type='submit'>Search</Button>
+            <Button variant="contained" type='submit' className='search' sx={{backgroundColor: 'maroon' }}>Search</Button>
             </Box>
         </form>
         <Box display='flex' justifyContent='center' my={2}>

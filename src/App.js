@@ -1,7 +1,8 @@
 import HomePage from "./features/homePage/HomePage";
 import RecipeDetails from "./features/recipes-details/RecipeDetails";
 import { Routes, Route } from "react-router-dom"
-import Navbar from "./Navbar";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Route path="/" element={ <HomePage/> } />
         <Route path="recipe/:id" element={ <RecipeDetails/> } />
       </Routes>
-
+    <Footer />
     </div>
   );
 }
