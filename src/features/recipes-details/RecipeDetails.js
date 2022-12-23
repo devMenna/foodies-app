@@ -32,7 +32,7 @@ const RecipeDetails = () => {
 
 
   return (
-    <Container  sx={{display: 'flex', alignItems: 'center', marginTop: 5, backgroundColor: 'wheat', padding: 5, mb: 4, borderRadius: 10 }}>
+    <Container  sx={{display: 'flex', alignItems: 'center', marginTop: 5, backgroundColor: 'wheat', padding: 5, borderRadius: 10, marginBottom: '-12vw' }}>
     <Box
     component="img"
     sx={{
@@ -61,11 +61,11 @@ const RecipeDetails = () => {
     {line} </Typography>
      ))}
 
-  <Button variant="contained" sx={{marginTop: 2, backgroundColor: '#B5926D'}} href={recipe.url} target= '_blank'>
+  <Button variant="contained" className='card-button' sx={{marginTop: 2, backgroundColor: '#B5926D'}} href={recipe.url} target= '_blank'>
       Check out the recipe
   </Button>
 
-  <Button variant="contained" sx={{marginTop: 2, marginLeft: 2, backgroundColor: '#B5926D'}} onClick={() => navigate(-1)}>
+  <Button variant="contained" className='card-button' sx={{marginTop: 2, marginLeft: 2, backgroundColor: '#B5926D'}} onClick={() => navigate(-1)}>
       Back
   </Button>
   </Container>

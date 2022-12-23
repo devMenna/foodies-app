@@ -9,7 +9,7 @@ const Navbar = () => {
             Foodies
           </Typography>
 
-          <Button href='/' sx={{ padding: 2, border: '0.5px solid white'  , m: 2, height: '3vw',
+          <Button  href='/' sx={{ padding: 2, border: '0.5px solid white'  , m: 2, height: '3vw',
     width: '14vw', backgroundColor: '#FFF8DC',color: '#435425', fontWeight: '900', fontSize: '1.1vw',}} >
           Home
           </Button>
